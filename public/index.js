@@ -1,9 +1,13 @@
-const bugImages = ["bug1.png", "bug2.png", "bug3.png", "bug4.png"];
+const bugImages = ["Edwin.png", "DMG.png", "Chok.png", "Mike.png", "Sarah.png", "Declan.png", "Sam.png", "Brooklyn.png"];
+// const bugImages = ["bug1.png", "bug2.png", "bug3.png", "bug4.png"];
 let gameDiv = document.getElementById("gameDiv");
 let countdownSpan = document.getElementById("countdownSpan");
 let scoreSpan = document.getElementById("scoreSpan")
 let countdown = 10, score = 0;
 let startTime;
+
+const scoresURL = "http://localhost:3000/scores";
+
 
 function gameOver() {
     const newScore = {
@@ -12,7 +16,7 @@ function gameOver() {
     };
     const scorePost = {
         method: "POST",
-        headers: "Content-Type" & "application/json",
+        headers: {"Content-Type" : "application/json"},
         body: JSON.stringify(newScore),
     };
 

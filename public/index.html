@@ -9,12 +9,21 @@
     <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
 </head>
 <body>
-    <h1>Bug Squash!</h1>
-    <input type="text" id="playerName" placeholder="Enter your name" autofocus>
-    <button type="button" id="startButton">Start&nbsp;Game</button><br>
-    Time remaining: <span id="countdownSpan"></span><br>
-    Bugs squashed: <span id="scoreSpan"></span><br>
-    <div id="gameDiv"></div>
+        <header><h1>Bug Squash!</h1></header>
+    <div class = "container">
+        <div>
+        <input type="text" id="playerName" placeholder="Enter your name" autofocus>
+        <button type="button" id="startButton">Start&nbsp;Game</button>
+        </div>
+        <div>
+        Time Remaining: <span id="countdownSpan"></span>
+        </div>
+        <div>
+        Bugs Squashed: <span id="scoreSpan"></span>
+        </div>
+        <div id="highScores"></div>
+        <div id="gameDiv"></div>
+    </div>
     <script src="index.js"></script>
 </body>
 </html>
