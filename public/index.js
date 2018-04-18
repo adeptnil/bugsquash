@@ -6,9 +6,29 @@ let countdown = 10, score = 0;
 let startTime;
 
 function gameOver() {
-    // This is the function that gets called when the game is over.
+    const newScore = {
+        name: playerName,
+        score: score,
+    };
+    const scorePost = {
+        method: "POST",
+        headers: "Content-Type" & "application/json",
+        body: JSON.stringify(newScore),
+    };
+
+    fetch(scoresURL, scorePost)
+    .catch(error => {
+        console.log("Not Working");
+    })
     // Update this to post the new score to the server.
     window.alert("You squashed " + score + " bugs!");
+    fetch(scoresURL)
+    .then(response => response.json())
+    .then(scores => {
+        let highScores = document.getElementById("highScores");
+        highScores.innerHTML = scores.map(score => `${score.name}: ${score.score}`).join("<br />");
+
+    })
 }
 
 function playGame() {

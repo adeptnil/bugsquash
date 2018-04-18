@@ -33,3 +33,11 @@ span {font-size: 20px;}
       top: 70px;
   }
 }
+#highScores {
+    display: flex;
+    position: absolute;
+    border: 2px solid black;
+    height: 200px;
+    min-width: 100px;
+    left: 500px;
+}
